@@ -1,0 +1,29 @@
+[
+    {
+        "id": "led_sala",
+        "name": "L\u00e2mpada Sala",
+        "type": "led",
+        "pin": 18,
+        "state": false
+    },
+    {
+        "id": "relay_quarto",
+        "name": "Tomada Quarto",
+        "type": "relay",
+        "pin": 23,
+        "state": false
+    },
+    {
+        "id": "pir_corredor",
+        "name": "Sensor Movimento",
+        "type": "pir",
+        "pin": 17,
+        "enabled": true
+    },
+    {
+        "id": "dht_sala",
+        "name": "Temp/Umidade Sala",
+        "type": "dht22",
+        "pin": 4
+    }
+]

@@ -1,0 +1,6 @@
+Flask==3.1.2
+Flask-SocketIO==5.3.6
+eventlet==0.36.1
+bcrypt==4.2.0
+adafruit-circuitpython-dht==4.0.2  # apenas na Pi
+RPi.GPIO==0.7.1                   # apenas na Pi

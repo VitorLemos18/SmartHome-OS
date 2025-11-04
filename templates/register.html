@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro - SmartHome OS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="d-flex align-items-center min-vh-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="card shadow">
+          <div class="card-body p-5 text-center">
+            <i class="fas fa-user-plus fa-3x text-success mb-4"></i>
+            <h3>Criar Conta</h3>
+            <p class="text-muted mb-4">Cadastre-se para controlar sua casa</p>
+
+            {% if error %}
+              <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+
+            <form method="post" class="needs-validation" novalidate>
+              <div class="mb-3">
+                <input type="text" name="username" class="form-control form-control-lg" placeholder="Nome de usuário" required minlength="3">
+                <div class="invalid-feedback">Mínimo 3 caracteres</div>
+              </div>
+              <div class="mb-3">
+                <input type="password" name="password" class="form-control form-control-lg" placeholder="Senha" required minlength="6">
+                <div class="invalid-feedback">Mínimo 6 caracteres</div>
+              </div>
+              <button class="btn btn-success w-100 btn-lg">Criar Conta</button>
+            </form>
+
+            <p class="mt-4 text-muted">
+              Já tem conta? <a href="{{ url_for('login') }}">Fazer login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>

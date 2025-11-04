@@ -1,0 +1,16 @@
+[
+  {
+    "id": "auto_luz_noite",
+    "name": "Acender luz ao escurecer",
+    "trigger": {
+      "device": "dht_sala",
+      "condition": "below",
+      "value": 22
+    },
+    "action": {
+      "device": "led_sala",
+      "state": true
+    },
+    "enabled": true
+  }
+]
